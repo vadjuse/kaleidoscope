@@ -1,4 +1,4 @@
-# Presets & Ensembles
+# README
 
 How to save, export, and import sounds on KALEIDOSCOPE.
 
