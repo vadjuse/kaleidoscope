@@ -34,7 +34,6 @@ its own bootloader and mounts as a plain flash drive.
 
 > ⚠️ **Back up your presets first.** A firmware update does not intentionally clear
 > memory slots, but an interrupted update can leave the device in an unknown state.
-> Export anything you care about — see [PRESETS.md](PRESETS.md).
 
 > ℹ️ Some releases change how existing presets sound. Read the
 > [release history](#release-history) below before updating.
@@ -189,7 +188,6 @@ To generate a new sequence manually: hold `TSEL` to select the track, then press
 
 > ⚠️ **Сначала сделайте бэкап пресетов.** Обновление прошивки не стирает слоты памяти
 > намеренно, но прерванная прошивка может оставить устройство в непредсказуемом
-> состоянии. Экспортируйте всё, что дорого — см. [PRESETS.md](PRESETS.md).
 
 > ℹ️ Некоторые релизы меняют звучание существующих пресетов. Перед обновлением загляните
 > в [историю релизов](#история-релизов) ниже.
