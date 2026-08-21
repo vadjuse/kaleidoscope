@@ -1,6 +1,91 @@
-# Changelog
+# Firmware
+
+Update procedure and release history for KALEIDOSCOPE.
 
 ---
+
+## Contents
+
+**English**
+
+- [Before you start](#Before-you-start)
+- [Update procedure](#update-procedure)
+- [Quick reference](#quick-reference)
+- [Troubleshooting](#troubleshooting)
+- [Release history](#release-history)
+  - [v77](#v77) — [Added](#added) · [Changed](#changed) · [Fixed](#fixed) · [Preset compatibility](#preset-compatibility)
+
+**Русский**
+
+- [Перед началом](#перед-началом)
+- [Порядок обновления](#порядок-обновления)
+- [Шпаргалка](#шпаргалка)
+- [Что делать, если не сработало](#что-делать-если-не-сработало)
+- [История релизов](#история-релизов)
+  - [v77](#v77-1) — [Добавлено](#добавлено) · [Изменено](#изменено) · [Исправлено](#исправлено) · [Совместимость пресетов](#совместимость-пресетов)
+
+---
+---
+
+## Before you start
+
+You will need a computer and a **USB Type-C** cable. Nothing else — the device carries
+its own bootloader and mounts as a plain flash drive.
+
+> ⚠️ **Back up your presets first.** A firmware update does not intentionally clear
+> memory slots, but an interrupted update can leave the device in an unknown state.
+> Export anything you care about — see [PRESETS.md](PRESETS.md).
+
+> ℹ️ Some releases change how existing presets sound. Read the
+> [release history](#release-history) below before updating.
+
+---
+
+## Update procedure
+
+1. Connect the device to your computer with a **USB Type-C** cable.
+2. Rename the firmware file you want to install to **`blink.bin`**.
+3. Press and hold **Encoder 1**. While holding it, briefly tap the **RESET** button to
+   restart the device.
+4. The display shows a message confirming **USB mode** — you can release Encoder 1 now.
+   The device appears on your computer as a USB flash drive.
+5. Copy **`blink.bin`** to the **root** of that drive.
+6. When the copy finishes, **safely eject** the drive through your operating system.
+7. Restart KALEIDOSCOPE with a brief press of **RESET**.
+8. On startup the display confirms that the firmware was installed successfully.
+
+The device copies the firmware into its internal memory, deletes `blink.bin`, and boots
+into the application. The file disappearing from the drive is normal — it means the
+update went through.
+
+---
+
+## Quick reference
+
+| | |
+|---|---|
+| **Firmware filename** | `blink.bin` — exactly this name, in the drive root |
+| **Enter USB mode** | Hold Encoder 1 + tap RESET |
+| **Exit USB mode** | Safely eject, then tap RESET |
+| **Simplified font** | Hold Encoder 2 while the device starts up |
+
+---
+
+## Troubleshooting
+
+| Symptom                                         | Likely cause                                                                                  |
+| ----------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Device does not appear as a flash drive         | Encoder 1 was released too early, or the cable is charge-only — use a cable that carries data |
+| Nothing happens after RESET                     | The file is not named exactly `blink.bin`, or it is in a subfolder instead of the drive root  |
+| `blink.bin` is still on the drive after restart | The update did not run. Check the filename, re-copy, and eject safely before pressing RESET   |
+| Update seems to hang                            | Do not disconnect power. Wait for the on-screen message, then RESET                           |
+| Display looks garbled after the update          | Boot once with Encoder 2 held to use the simplified font                                      |
+
+> ⚠️ **Never unplug the device mid-update.** Wait for the confirmation message on screen.
+
+---
+
+## Release history
 
 ## [v77]
 
@@ -91,76 +176,11 @@ To generate a new sequence manually: hold `TSEL` to select the track, then press
 | `DRIV` lookup table rebuilt | Presets may sound slightly different. Adjust `DRIV` manually where needed. |
 | `MIDL` aliasing compensation | Bright, high-`FREQ` patches will read as less harmonically rich than before — this is the anti-aliasing behavior working as intended. |
 
-# Firmware Update
-
-How to install a new firmware version on KALEIDOSCOPE.
-
-> 🇷🇺 **Русская версия** — в конце страницы, [Обновление прошивки](#обновление-прошивки).
-
----
-
-## Before you start
-
-You will need a computer and a **USB Type-C** cable. Nothing else — the device carries
-its own bootloader and mounts as a plain flash drive.
-
-> ⚠️ **Back up your presets first.** A firmware update does not intentionally clear
-> memory slots, but an interrupted update can leave the device in an unknown state.
-> Export anything you care about — see [PRESETS.md](PRESETS%20&%20ENSEMBLES.md).
-
-> ℹ️ Some releases change how existing presets sound. Read
-> [CHANGELOG.md](CHANGELOG.md) before updating.
-
----
-
-## Update procedure
-
-1. Connect the device to your computer with a **USB Type-C** cable.
-2. Rename the firmware file you want to install to **`blink.bin`**.
-3. Press and hold **Encoder 1**. While holding it, briefly tap the **RESET** button to
-   restart the device.
-4. The display shows a message confirming **USB mode** — you can release Encoder 1 now.
-   The device appears on your computer as a USB flash drive.
-5. Copy **`blink.bin`** to the **root** of that drive.
-6. When the copy finishes, **safely eject** the drive through your operating system.
-7. Restart KALEIDOSCOPE with a brief press of **RESET**.
-8. On startup the display confirms that the firmware was installed successfully.
-
-The device copies the firmware into its internal memory, deletes `blink.bin`, and boots
-into the application. The file disappearing from the drive is normal — it means the
-update went through.
-
----
-
-## Quick reference
-
-| | |
-|---|---|
-| **Firmware filename** | `blink.bin` — exactly this name, in the drive root |
-| **Enter USB mode** | Hold Encoder 1 + tap RESET |
-| **Exit USB mode** | Safely eject, then tap RESET |
-| **Simplified font** | Hold Encoder 2 while the device starts up |
-
----
-
-## Troubleshooting
-
-| Symptom | Likely cause |
-|---|---|
-| Device does not appear as a flash drive | Encoder 1 was released too early, or the cable is charge-only — use a cable that carries data |
-| Nothing happens after RESET | The file is not named exactly `blink.bin`, or it is in a subfolder instead of the drive root |
-| `blink.bin` is still on the drive after restart | The update did not run. Check the filename, re-copy, and eject safely before pressing RESET |
-| Update seems to hang | Do not disconnect power. Wait for the on-screen message, then RESET |
-| Display looks garbled after the update | Boot once with Encoder 2 held to use the simplified font |
-
-> ⚠️ **Never unplug the device mid-update.** Wait for the confirmation message on screen.
 
 ---
 ---
 
-# Обновление прошивки
-
-Как установить новую версию прошивки на KALEIDOSCOPE.
+# Русский
 
 ## Перед началом
 
@@ -169,10 +189,10 @@ update went through.
 
 > ⚠️ **Сначала сделайте бэкап пресетов.** Обновление прошивки не стирает слоты памяти
 > намеренно, но прерванная прошивка может оставить устройство в непредсказуемом
-> состоянии. Экспортируйте всё, что дорого — см. [PRESETS.md](PRESETS%20&%20ENSEMBLES.md).
+> состоянии. Экспортируйте всё, что дорого — см. [PRESETS.md](PRESETS.md).
 
 > ℹ️ Некоторые релизы меняют звучание существующих пресетов. Перед обновлением загляните
-> в [CHANGELOG.md](CHANGELOG.md).
+> в [историю релизов](#история-релизов) ниже.
 
 ---
 
@@ -219,3 +239,99 @@ update went through.
 
 > ⚠️ **Никогда не отключайте устройство во время обновления.** Дождитесь подтверждения
 > на экране.
+
+---
+
+## История релизов
+
+### v77
+
+Накопительный релиз, включающий **все изменения с версии v67**.
+
+> **Перед обновлением:** два изменения в этом релизе могут повлиять на звучание
+> существующих пресетов. См. [Совместимость пресетов](#совместимость-пресетов) ниже.
+
+#### Добавлено
+
+**Step Modulator**
+
+Новый модулятор, работающий как **арпеджиатор** или как **пошаговый секвенсор**,
+запускаемый одним из внутренних источников триггера. Занимает две страницы в
+**группе страниц 7**.
+
+`sSEQ` — редактирование последовательности:
+
+| Параметр | Диапазон | Описание |
+|---|---|---|
+| `VALU` | −36 : 36 | Значение шага последовательности под курсором |
+| `CURS` | — | Двигает курсор. Нажатие и удержание энкодера задаёт длину последовательности, 1–16 шагов |
+| `ROTA` | — | Вращает последовательность |
+| `RAND` | 0 : 32 | Количество случайности в алгоритме генерации. `0` заполняет всю последовательность нулями, `32` непрерывно генерирует новые случайные значения для всех шагов |
+
+Чтобы сгенерировать новую последовательность вручную: удерживая `TSEL`, выберите трек и
+нажмите энкодер `RAND`.
+
+`sMX` — матрица модуляции:
+
+| Параметр | Описание |
+|---|---|
+| `PARM` | Модулируемый параметр |
+| `DEST` | Трек, которому принадлежит выбранный `PARM` |
+| `TSRC` | Источник триггера, продвигающий секвенсор на следующий шаг |
+| `ALIAS` | Базовое значение модулируемого параметра |
+
+Значения `TSRC`:
+
+| Значение | Секвенсор продвигается по |
+|---|---|
+| `OFF` | Триггеринг отключён |
+| `vENV` | Амплитудная огибающая в режиме петли |
+| `mENV` | Модуляционная огибающая в режиме петли |
+| `vmEN` | Обе огибающие в режиме петли |
+| `TSEL` | Каждому нажатию сенсора трека |
+
+**Модуляция и синтез**
+
+- **`GLIDE` добавлен как назначение модуляции.**
+- **`RELEASE` добавлен как назначение модуляции.**
+- **Тип `Sample & Hold` добавлен в параметр `QUANT*`.**
+- **Тип `Envelope Follower` добавлен в параметр `QUANT*`.**
+- **Строй Just Intonation добавлен в параметр `SCALE`.**
+- **Режим Sharp Attack добавлен в параметр `SHAP`** на страницах `*ENV`.
+
+**Интерфейс**
+
+- **Добавлен режим `1HOT TSEL`.** Позволяет редактировать последний выбранный трек, не
+  удерживая кнопку Track Select. Для корректной работы все треки должны быть в режиме `1HOT`.
+- **Имена активных назначений модуляции теперь подсвечиваются** при вращении энкодера
+  `ALIAS` на страницах `*MX`.
+
+#### Изменено
+
+- **`FOLD` переименован в `MULT`.** И хард-синк, и вейвфолдинг по сути ведут себя как
+  формы умножения частоты — название теперь это отражает.
+- **`MIDL` автоматически компенсирует алиасинг.** По мере роста `FREQ` осциллятора `MIDL`
+  постепенно смещается к `0.5`, снижая насыщенность гармониками и минимизируя алиасинг.
+- **`DRIV` отображает значения усиления.** Таблица значений параметра перестроена.
+- **Улучшен отклик резонанса фильтра.** Резонанс ведёт себя ближе к классическому
+  лестничному фильтру Moog — мягче по характеру, с характерным падением уровня на выходе
+  при высоких значениях.
+- **MIDI CC17 (Filter Cutoff) управляет текущим выбранным типом фильтра.** Тип фильтра
+  выбирается через интерфейс KALEIDOSCOPE.
+- **Новое поведение генеративного секвенсора.** Когда EOC-триггер трека *Ta* отправляется
+  треку *Tb*, при этом *Tb* не удерживает свою огибающую, а его Modulator MIDI Channel
+  также выставлен в *Tb*, запускаются **обе** огибающие *Tb* — амплитудная и модуляционная.
+- Мелкие улучшения интерфейса.
+
+#### Исправлено
+
+- Исправлен пресет по умолчанию.
+- Мелкие исправления ошибок.
+
+#### Совместимость пресетов
+
+| Изменение | Влияние на существующие пресеты |
+|---|---|
+| Перестроена таблица значений `DRIV` | Пресеты могут звучать немного иначе. При необходимости подстройте `DRIV` вручную. |
+| Компенсация алиасинга в `MIDL` | Яркие патчи с высоким `FREQ` будут звучать менее насыщенно по гармоникам — это и есть работа антиалиасинга. |
+
