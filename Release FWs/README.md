@@ -91,3 +91,131 @@ To generate a new sequence manually: hold `TSEL` to select the track, then press
 | `DRIV` lookup table rebuilt | Presets may sound slightly different. Adjust `DRIV` manually where needed. |
 | `MIDL` aliasing compensation | Bright, high-`FREQ` patches will read as less harmonically rich than before — this is the anti-aliasing behavior working as intended. |
 
+# Firmware Update
+
+How to install a new firmware version on KALEIDOSCOPE.
+
+> 🇷🇺 **Русская версия** — в конце страницы, [Обновление прошивки](#обновление-прошивки).
+
+---
+
+## Before you start
+
+You will need a computer and a **USB Type-C** cable. Nothing else — the device carries
+its own bootloader and mounts as a plain flash drive.
+
+> ⚠️ **Back up your presets first.** A firmware update does not intentionally clear
+> memory slots, but an interrupted update can leave the device in an unknown state.
+> Export anything you care about — see [PRESETS.md](PRESETS%20&%20ENSEMBLES.md).
+
+> ℹ️ Some releases change how existing presets sound. Read
+> [CHANGELOG.md](CHANGELOG.md) before updating.
+
+---
+
+## Update procedure
+
+1. Connect the device to your computer with a **USB Type-C** cable.
+2. Rename the firmware file you want to install to **`blink.bin`**.
+3. Press and hold **Encoder 1**. While holding it, briefly tap the **RESET** button to
+   restart the device.
+4. The display shows a message confirming **USB mode** — you can release Encoder 1 now.
+   The device appears on your computer as a USB flash drive.
+5. Copy **`blink.bin`** to the **root** of that drive.
+6. When the copy finishes, **safely eject** the drive through your operating system.
+7. Restart KALEIDOSCOPE with a brief press of **RESET**.
+8. On startup the display confirms that the firmware was installed successfully.
+
+The device copies the firmware into its internal memory, deletes `blink.bin`, and boots
+into the application. The file disappearing from the drive is normal — it means the
+update went through.
+
+---
+
+## Quick reference
+
+| | |
+|---|---|
+| **Firmware filename** | `blink.bin` — exactly this name, in the drive root |
+| **Enter USB mode** | Hold Encoder 1 + tap RESET |
+| **Exit USB mode** | Safely eject, then tap RESET |
+| **Simplified font** | Hold Encoder 2 while the device starts up |
+
+---
+
+## Troubleshooting
+
+| Symptom | Likely cause |
+|---|---|
+| Device does not appear as a flash drive | Encoder 1 was released too early, or the cable is charge-only — use a cable that carries data |
+| Nothing happens after RESET | The file is not named exactly `blink.bin`, or it is in a subfolder instead of the drive root |
+| `blink.bin` is still on the drive after restart | The update did not run. Check the filename, re-copy, and eject safely before pressing RESET |
+| Update seems to hang | Do not disconnect power. Wait for the on-screen message, then RESET |
+| Display looks garbled after the update | Boot once with Encoder 2 held to use the simplified font |
+
+> ⚠️ **Never unplug the device mid-update.** Wait for the confirmation message on screen.
+
+---
+---
+
+# Обновление прошивки
+
+Как установить новую версию прошивки на KALEIDOSCOPE.
+
+## Перед началом
+
+Понадобится компьютер и кабель **USB Type-C**. Больше ничего — загрузчик уже внутри
+устройства, оно монтируется как обычная флешка.
+
+> ⚠️ **Сначала сделайте бэкап пресетов.** Обновление прошивки не стирает слоты памяти
+> намеренно, но прерванная прошивка может оставить устройство в непредсказуемом
+> состоянии. Экспортируйте всё, что дорого — см. [PRESETS.md](PRESETS%20&%20ENSEMBLES.md).
+
+> ℹ️ Некоторые релизы меняют звучание существующих пресетов. Перед обновлением загляните
+> в [CHANGELOG.md](CHANGELOG.md).
+
+---
+
+## Порядок обновления
+
+1. Подключите устройство к компьютеру кабелем **USB Type-C**.
+2. Переименуйте файл прошивки, который хотите установить, в **`blink.bin`**.
+3. Нажмите и удерживайте **Encoder 1**. Удерживая его, кратковременно нажмите кнопку
+   **RESET**, чтобы перезапустить устройство.
+4. На экране появится сообщение о переходе в **режим USB** — теперь Encoder 1 можно
+   отпустить. Устройство определится на компьютере как USB-флэш-накопитель.
+5. Скопируйте **`blink.bin`** в **корневую папку** накопителя.
+6. После завершения копирования **безопасно извлеките** накопитель средствами
+   операционной системы.
+7. Перезапустите KALEIDOSCOPE кратковременным нажатием **RESET**.
+8. После запуска на экране появится сообщение об успешной загрузке новой прошивки.
+
+Устройство копирует прошивку во внутреннюю память, удаляет `blink.bin` и переходит к
+работе приложения. То, что файл пропал с накопителя, — нормально: значит, обновление
+прошло.
+
+---
+
+## Шпаргалка
+
+| | |
+|---|---|
+| **Имя файла прошивки** | `blink.bin` — ровно так, в корне накопителя |
+| **Вход в режим USB** | Удерживать Encoder 1 + нажать RESET |
+| **Выход из режима USB** | Безопасно извлечь, затем нажать RESET |
+| **Упрощённый шрифт** | Удерживать Encoder 2 во время запуска устройства |
+
+---
+
+## Что делать, если не сработало
+
+| Симптом | Вероятная причина |
+|---|---|
+| Устройство не появляется как накопитель | Encoder 1 отпущен слишком рано, либо кабель только для зарядки — нужен кабель с передачей данных |
+| После RESET ничего не происходит | Файл назван не ровно `blink.bin`, либо лежит в подпапке, а не в корне |
+| `blink.bin` остался на накопителе после перезапуска | Обновление не запустилось. Проверьте имя, скопируйте заново и извлеките накопитель безопасно перед RESET |
+| Кажется, что обновление зависло | Не отключайте питание. Дождитесь сообщения на экране, затем нажмите RESET |
+| После обновления экран выглядит странно | Запустите устройство один раз с зажатым Encoder 2 — включится упрощённый шрифт |
+
+> ⚠️ **Никогда не отключайте устройство во время обновления.** Дождитесь подтверждения
+> на экране.
