@@ -1,0 +1,49 @@
+KALE v76
+
+All changes since release KALEv67 
+
+1. GLIDE modulation destination added.
+2. RELEASE modulation destination added.
+3.1 Sample & Hold type added to QUANT* parameter.
+3.2 Envelope Follower type added to QUANT* parameter.
+4. MIDI CC17 (Filter Cutoff) now controls the currently selected filter type. Use the Kaleidoscope interface to select the filter type.
+5. Fixed the default preset.
+6. Minor interface improvements.
+7. Minor bug fixes.
+8. Active modulation destination parameter names are now highlighted, then ALIAS encoder is rotated on *MX pages.
+9. Added 1HOT TSEL mode. It allows editing the last selected track without holding the Track Select button. All tracks must be set to 1HOT mode for this feature to work correctly.
+10. The MIDL parameter now automatically compensates for aliasing. As oscillator FREQ increases, MIDL gradually moves toward 0.5, reducing harmonic richness and minimizing aliasing.
+11. DRIV now displays gain values. The parameter’s lookup table has been updated, so existing presets may sound slightly different. If necessary, adjust DRIV manually.
+12. Added Just Intonation tuning to the SCALE parameter.
+13. Added Sharp Attack mode to the SHAP parameter on *ENV pages.
+14. FOLD has been renamed to MULT, since both hard sync and wavefolding effectively behave as forms of frequency multiplication.
+15. Added new behavior to the generative sequencer. When an EOC trigger  of track (Ta) is sent to another track (Tb), and that track is not currently holding its envelope, while its Modulator MIDI Channel is also set to Tb, both the Amplitude Envelope Tb  and the Modulation Envelope Tb are triggered.
+16. Improved filter resonance response. The resonance now behaves more like a classic Moog ladder filter, with a smoother character and the characteristic output level reduction at higher resonance values.
+17. Added a Step Modulator, which can be used as an arpeggiator or as a step sequencer triggered by one of the internal trigger sources.
+
+The Step Modulator consists of two pages in Page Group 7:
+
+sSEQ – sequence editing.
+sMX – modulation matrix configuration.
+
+sSEQ parameters
+
+VALU – sets the value of the sequence step currently selected by the cursor. Range -36:36
+CURS – moves the sequence cursor. Press and hold the encoder to adjust the sequence length from 1 to 16 steps.
+ROTA – rotates the sequence.
+RAND – controls the amount of randomness used by the sequence generation algorithm.
+RAND = 0 – fills the entire sequence with zeros.
+RAND = 32 – continuously generates new random values for all sequence steps.
+To generate a new sequence manually, hold TSEL to select the track, then press the RAND encoder.
+
+sMX parameters
+
+PARM – parameter to be modulated.
+DEST – track containing the selected PARM parameter.
+TSRC – trigger source that advances the sequencer to the next step.
+OFF – triggering disabled.
+vENV – Amplitude Envelope in loop mode.
+mENV – Modulation Envelope in loop mode.
+vmEN – both envelopes in loop mode.
+TSEL – advances one step each time the track touch sensor is pressed.
+ALIAS – controls the modulated parameter base value.

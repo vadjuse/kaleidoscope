@@ -1,0 +1,27 @@
+English
+
+Firmware Update
+
+1. Connect the device to your computer using a USB Type-C cable.
+2. Rename the firmware file you want to install to blink.bin.
+3. Press and hold Encoder 1. While holding the encoder, quick tap the RESET button to restart the device.
+4. The Kaleidoscope display will show a message indicating that it has entered USB mode. You can now release Encoder 1. The device will appear on your computer as a USB flash drive.
+5. Copy blink.bin to the root directory of the USB drive.
+6. After the copy is complete, safely eject the USB drive using your operating system.
+7. Restart Kaleidoscope by briefly pressing the RESET button.
+8. After startup, the display should show a message confirming that the firmware has been successfully updated.
+
+⸻
+
+Русский
+Обновление прошивки
+
+1. Подключите устройство к компьютеру с помощью кабеля USB Type-C.
+2. Переименуйте файл прошивки, который вы хотите установить, в blink.bin.
+3. Нажмите и удерживайте Encoder 1. Пока удерживаете энкодер, кратковременно нажмите кнопку RESET, чтобы перезапустить устройство.
+4. На экране Kaleidoscope появится сообщение о переходе в режим USB. После этого можно отпустить Encoder 1. На компьютере устройство определится как USB-флэш-накопитель.
+5. Скопируйте файл blink.bin в корневую папку USB-накопителя.
+6. После завершения копирования безопасно извлеките USB-накопитель средствами операционной системы.
+7. Перезапустите Kaleidoscope, кратковременно нажав кнопку RESET.
+8. После запуска на экране должно появиться сообщение об успешной загрузке новой прошивки.
+
