@@ -1,7 +1,6 @@
-KALE v76
+KALE v68 Release FW
 
-All changes since release KALEv67 
-
+KALE v76 Change List
 1. GLIDE modulation destination added.
 2. RELEASE modulation destination added.
 3.1 Sample & Hold type added to QUANT* parameter.
@@ -47,3 +46,35 @@ mENV – Modulation Envelope in loop mode.
 vmEN – both envelopes in loop mode.
 TSEL – advances one step each time the track touch sensor is pressed.
 ALIAS – controls the modulated parameter base value.
+
+Kaleidoscope v80 Beta Change List
+1. Changed the overdrive curve to a more “tube-like” characteristic.
+2. Simplified the visual design of the following font glyphs: “D”, “M”, “N”, “Q”, “V”, “W”, “Y”.
+3. Changed the behavior of linked modulation envelopes. If a modulation envelope is linked (CFG:MIDI:mCH = trX) to a track, it is no longer released when the MIDI note or track selector is released, as it was previously. Instead, it is released only when the volume envelope reaches 0. This makes the modulation envelope behave more like a cyclic LFO, allowing classic effects such as vibrato and making its behavior more intuitive in general.
+4. Added MIDI output for the generative sequencer via the existing MIDI OUT.
+    Principle of operation.
+4. 1 If Kaleidoscope receives a MIDI note on a channel that is not assigned to any track, the note is passed through to the existing MIDI OUT unchanged, as before.
+
+4.2 If Kaleidoscope receives a MIDI note on a channel assigned to at least one track, the incoming note is consumed. Instead, the MIDI OUT transmits the current state of the Kaleidoscope oscillator according to the following rules.
+
+4.3 The track’s volume envelope is not in cyclic mode.
+When a Note On is received, the volume envelope is triggered. At the same time, a MIDI Note On is sent with a note value corresponding to the current MIDI value of the oscillator, including ALL modulation, transposition, scale quantization, glide, step modulation, and arpeggiator processing.
+
+When the volume envelope enters the DECAY or RELEASE stage, a MIDI Note Off is sent for the last transmitted note.
+
+Only one gate-held note can be active on a channel at a time. The generative sequencer is monophonic.
+
+4.4 The volume envelope is in cyclic mode.
+When the volume envelope enters the ATTACK stage, a MIDI Note On is sent with the current oscillator note.
+
+When the volume envelope enters the DECAY or RELEASE stage, a MIDI Note Off is sent for the last transmitted note.
+
+4.5 When the oscillator’s MIDI note changes while the volume envelope is still held, a MIDI Note Off is sent for the previously transmitted note, followed by a MIDI Note On for the new note.
+
+This firmware is a beta release. If you encounter any bugs or unexpected or inconsistent behavior, please report them to @vadjuse.
+
+
+
+
+
+
