@@ -73,6 +73,18 @@ When the volume envelope enters the DECAY or RELEASE stage, a MIDI Note Off is s
 
 This firmware is a beta release. If you encounter any bugs or unexpected or inconsistent behavior, please report them to @vadjuse.
 
+Kaleidoscope v81 Beta Change List
+
+1. Added three firmware variants with different fonts.
+1.1 Original KLAATU with dots
+1.2 Original KLAATU without dots
+1.3 Classic rounded pixel font
+
+This firmware is a beta release. If you encounter any bugs or unexpected or inconsistent behavior, please report them to @vadjuse.
+
+
+
+
 
 
 
