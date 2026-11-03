@@ -82,6 +82,12 @@ Kaleidoscope v81 Beta Change List
 
 This firmware is a beta release. If you encounter any bugs or unexpected or inconsistent behavior, please report them to @vadjuse.
 
+Kaleidoscope v84 Beta Change List
+
+1. Optimized the firmware, allowing the audio sample rate to be increased from 32 kHz to 48 kHz.
+2. Added the ability to extend the comb filter’s delay time by reducing its internal sample rate by factors of 2, 4, or 8. This allows for significantly longer delay times without requiring additional memory. However, lower internal sample rates introduce digital artifacts into the sound.
+
+This firmware is a beta release. If you encounter any bugs or unexpected or inconsistent behavior, please report them to @vadjuse.
 
 
 
